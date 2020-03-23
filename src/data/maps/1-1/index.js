@@ -18,18 +18,18 @@ const tiles = [ // 20x15 grid.
 
 const monsters = [
     {
-        type: 'chicken',
+        type: 'chicken', //testing
         position: [15,13]
     },
     {
-        type: 'chicken',
+        type: 'chicken', //testing
         position: [13,5]
     }
 ];
 
 const message = {
     title: 'You wake up in this dungeon, with a bag of cash...',
-    body: 'you recall remembering going into this dungeon because you saw a store with items on sale'
+    body: 'you recall remembering going into this dungeon because you saw a pretty store with items on sale'
 }
 
 export default {
