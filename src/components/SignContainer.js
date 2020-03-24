@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
 import { Button, Form, Message} from 'semantic-ui-react'
-let logAPI = "http://localhost:3000/login"
-let profileAPI = "http://localhost:3000/profile"
+let signAPI = "http://localhost:3000/signup"
 
-class LogContainer extends Component{
+class SignContainer extends Component{
     state={
         username:"",
         password:"",
@@ -19,7 +18,7 @@ class LogContainer extends Component{
         })
     }
 
-    //JSON obj
+    //builds JSON obj
     signObj=()=>{
         return {
             username: this.state.username,
@@ -30,6 +29,7 @@ class LogContainer extends Component{
 
     handleSubmit=async ()=>{
         let {username,password} = this.state
+        //user must fill input
         if (username === "" || password === ""){
             this.setState({
                 warning:true,
@@ -39,17 +39,17 @@ class LogContainer extends Component{
         }
         else{
             try{
-            let resp = await fetch(logAPI,{
+            let resp = await fetch(signAPI,{
                 method:'POST',
                 headers:{'Content-Type': 'application/json'},
                 body: JSON.stringify(this.signObj())
             })
             let user = await resp.json()
-           
-            //storing token
-            localStorage.setItem(user.jwt)
-            this.props.updateToken(user.jwt)
 
+            //Storing Token
+            localStorage.setItem('jwt',user.jwt)
+            this.props.updateToken(user.jwt)
+            
             //clears input
             this.setState({
                 username:"",
@@ -69,17 +69,6 @@ class LogContainer extends Component{
                 warning:false,
                 success:false
             })
-
-            //gets auth
-            let r = await fetch(profileAPI, {
-                method: 'GET',
-                headers: {
-                Authorization: `Bearer ${user.jwt}`
-                }
-              })
-
-            
-              
             }catch(error){
                 //fails loudly
                 this.setState({
@@ -95,9 +84,10 @@ class LogContainer extends Component{
 
 
     render(){
+        
         return(
-            <div className="logcontainer">
-                <h1 className="logtitle">Login</h1>
+            <div className="signcontainer">
+                <h1 className="signtitle">Sign up</h1>
            
             <Form onSubmit={this.handleSubmit} success={this.state.success} error={this.state.error} warning={this.state.warning}>
             
@@ -125,7 +115,7 @@ class LogContainer extends Component{
             header='Could you check something!'
             content='Fields cannot be blank'
             />
-            <Button type='submit'>Login</Button>
+            <Button type='submit'>Sign Up</Button>
           </Form>
                
           </div>
@@ -133,4 +123,4 @@ class LogContainer extends Component{
     }
 }
 
-export default LogContainer
+export default SignContainer
