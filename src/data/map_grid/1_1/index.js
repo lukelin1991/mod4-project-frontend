@@ -5,7 +5,7 @@ const tiles = [ // 20x15 grid.
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
-    [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
+    [1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
@@ -15,25 +15,7 @@ const tiles = [ // 20x15 grid.
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 ];
-
-const monsters = [
-    {
-        type: 'chicken', //testing
-        position: [15,13]
-    },
-    {
-        type: 'chicken', //testing
-        position: [13,5]
-    }
-];
-
-const message = {
-    title: 'You wake up in this dungeon, with a bag of cash...',
-    body: 'you recall remembering going into this dungeon because you saw a pretty store with items on sale'
-}
 
 export default {
-    tiles,
-    monsters,
-    message
+    tiles
 }
