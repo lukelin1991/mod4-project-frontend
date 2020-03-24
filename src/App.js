@@ -17,6 +17,7 @@ class App extends React.Component {
   render(){
   return (
       <div className="App">
+        I am app
       <SignContainer  updateToken={this.updateToken}/>
       <LogContainer  updateToken={this.updateToken}/>
       </div>

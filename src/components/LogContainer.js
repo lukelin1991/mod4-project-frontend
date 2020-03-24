@@ -9,8 +9,7 @@ class LogContainer extends Component{
         password:"",
         success:null,
         error:null,
-        warning:null
-        
+        warning:null   
     }
 
     updateInput=(event)=>{
