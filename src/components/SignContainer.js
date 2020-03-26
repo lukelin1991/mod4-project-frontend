@@ -45,10 +45,14 @@ class SignContainer extends Component{
                 body: JSON.stringify(this.signObj())
             })
             let user = await resp.json()
+            console.log(user)
 
             //Storing Token
             localStorage.setItem('jwt',user.jwt)
             this.props.updateToken(user.jwt)
+
+
+          
             
             //clears input
             this.setState({
@@ -71,6 +75,7 @@ class SignContainer extends Component{
             })
             }catch(error){
                 //fails loudly
+                console.log(error)
                 this.setState({
                     error:true,
                     warning:false,
@@ -86,8 +91,8 @@ class SignContainer extends Component{
     render(){
         
         return(
-            <div className="signcontainer">
-                <h1 className="signtitle">Sign up</h1>
+            <div className="logcontainer">
+                <h1 className="logtitle">Sign up</h1>
            
             <Form onSubmit={this.handleSubmit} success={this.state.success} error={this.state.error} warning={this.state.warning}>
             
@@ -96,8 +101,8 @@ class SignContainer extends Component{
               <input placeholder='Username' name="username" value={this.state.username} onChange={this.updateInput}/>
             </Form.Field>
             <Form.Field >
-              <label>password</label>
-              <input type='password' name="password" placeholder='password' value={this.state.password} onChange={this.updateInput}/>
+              <label>Password</label>
+              <input type='password' name="password" placeholder='Password' value={this.state.password} onChange={this.updateInput}/>
             </Form.Field>
             
             <Message

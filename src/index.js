@@ -1,15 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Home from './components/Home'
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom'
+import 'semantic-ui-css/semantic.min.css'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Login from './Login';
+import Home from './Home'
+import Sign from './Sign';
+import Navbar from './components/Navbar'
+
 
 ReactDOM.render(
     <Router>
-        <NavLink></NavLink>
-    <Route path="/" component={Home} />
+    <Navbar/>
+    <Route exact path="/" component={Home} />
+    <Route path="/login" component={Login}/>
+    <Route path="/signup" component={Sign}/>
+
   </Router>,
 
  document.getElementById('root'));
@@ -17,4 +22,4 @@ ReactDOM.render(
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+

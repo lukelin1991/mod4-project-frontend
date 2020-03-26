@@ -44,10 +44,21 @@ class LogContainer extends Component{
                 body: JSON.stringify(this.signObj())
             })
             let user = await resp.json()
+            console.log(user)
            
             //storing token
-            localStorage.setItem(user.jwt)
-            this.props.updateToken(user.jwt)
+            localStorage.setItem('jwt',user.jwt)
+            this.props.updateToken()
+
+            //gets auth
+            let r = await fetch(profileAPI, {
+                method: 'GET',
+                headers: {
+                Authorization: `Bearer ${user.jwt}`
+                }
+              })
+              let profile = await r.json()
+              console.log(profile)
 
             //clears input
             this.setState({
@@ -69,18 +80,21 @@ class LogContainer extends Component{
                 success:false
             })
 
-            //gets auth
-            let r = await fetch(profileAPI, {
+            
+            let response = await fetch('http://localhost:3000/items',{
                 method: 'GET',
                 headers: {
-                Authorization: `Bearer ${user.jwt}`
+                Authorization: `Bearer ${this.props.token}`
                 }
               })
-
+           
+            let heros = await response.json()
+            console.log(heros)
             
               
             }catch(error){
                 //fails loudly
+                console.log(error)
                 this.setState({
                     error:true,
                     warning:false,
@@ -105,14 +119,14 @@ class LogContainer extends Component{
               <input placeholder='Username' name="username" value={this.state.username} onChange={this.updateInput}/>
             </Form.Field>
             <Form.Field >
-              <label>password</label>
-              <input type='password' name="password" placeholder='password' value={this.state.password} onChange={this.updateInput}/>
+              <label>Password</label>
+              <input type='password' name="password" placeholder='Password' value={this.state.password} onChange={this.updateInput}/>
             </Form.Field>
             
             <Message
             success
             header='Form Completed'
-            content="You're all signed up"
+            content="Welcome Back"
             />
             <Message
             error

@@ -1,28 +1,25 @@
 import React from 'react';
 import SignContainer from './components/SignContainer.js'
-import LogContainer from './components/LogContainer.js'
 import 'semantic-ui-css/semantic.min.css'
 
 import './App.css';
 
-class App extends React.Component {
+class Sign extends React.Component {
   state={
     token:""
   }
-  updateToken=(token)=>{
+  updateToken=()=>{
     this.setState({
-      token:token
+      token:localStorage.getItem('jwt')
     })
   }
   render(){
   return (
       <div className="App">
-        I am app
       <SignContainer  updateToken={this.updateToken}/>
-      <LogContainer  updateToken={this.updateToken}/>
       </div>
     );
   }
 }
 
-export default App;
+export default Sign;

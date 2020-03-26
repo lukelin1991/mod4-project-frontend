@@ -3,33 +3,24 @@
   padding: 1cm;
 }
 
-.signcontainer{
-  position: fixed;
-  width: 300px;
-  right:100px;
-  border: solid;
-  top:100px;
-}
 
 .logcontainer{
-  position: fixed;
+  position: relative;
   width: 300px;
-  left:100px;
+  left: 450px;
   border: solid;
   top:100px;
+  background-color: white;
 }
 
 .ui.form{
   padding: 2cm;
 }
 
-.signtitle{
-  top:125px;
-  right: 210px;
-  position: fixed;
-}
+
 .logtitle{
-  top:125px;
-  position: fixed;
-  left: 210px;
+  top:50px;
+
+  position: relative;
+  
 }
