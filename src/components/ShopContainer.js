@@ -12,6 +12,7 @@ const ItemContainer=(props)=>{
     }
     return(
         <div className="item-container">
+            <h1 className="shoptitle">Flatiron Wares</h1>
              <Card.Group itemsPerRow={4}>
                 {renderCards()}
             </Card.Group>
