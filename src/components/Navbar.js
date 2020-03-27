@@ -5,7 +5,7 @@ import '../Navbar.css'
 
 
 // let logged = localStorage.getItem('jwt')
- 
+
 /* add the navbar component */
 class Navbar extends React.Component{
   state={
@@ -61,6 +61,10 @@ class Navbar extends React.Component{
       </NavLink>
     </Menu.Item>
 
+    <Menu.Item position="right">
+      Gold: {this.user.gold}
+    </Menu.Item>
+
     {/* <Menu.Item link >
       <NavLink
         to="/items"
@@ -76,6 +80,21 @@ class Navbar extends React.Component{
   
 
   render(){
+
+    let url = "http://localhost:3000"
+
+    const fetchContent = () => {
+      fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        return getGold(data)
+      })
+    }
+
+    const getGold = (data) => {
+      console.log(data)
+    }
+
 
   return(
   <div>

@@ -6,7 +6,6 @@ import { Menu } from 'semantic-ui-react'
 import {NavLink } from 'react-router-dom'
 
 let token = localStorage.getItem('jwt')
-let URL = 'http://localhost:3001/'
 
 class Home extends React.Component{
     state={
