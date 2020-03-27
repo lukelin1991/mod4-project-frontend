@@ -46,10 +46,21 @@ code {
   top:13px;
   border:none;
   padding: 30px;
+  text-align: center;
 }
 
 .item-card{
   font-family: 'Droid Sans';
   height:200px;
   width:100px;
+}
+
+.shoptitle{
+  color: white;
+}
+
+.home-menu{
+  position: relative;
+  top: 10px;
+  right: 10px;
 }

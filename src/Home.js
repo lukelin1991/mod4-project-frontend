@@ -26,7 +26,7 @@ class Home extends React.Component{
                <HomeContainer/>
                :
                <App/>}
-            <Menu vertical>
+            <Menu vertical className={"home-menu"}>
                 <Menu.Item link >
                     <NavLink to="/shops"exact>Shop</NavLink>
                 </Menu.Item>
