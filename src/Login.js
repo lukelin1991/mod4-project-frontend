@@ -5,7 +5,7 @@ import './App.css';
 
 class Log extends React.Component {
   state={
-    token:""
+    token:localStorage.getItem('jwt')
   }
   updateToken=()=>{
     this.setState({

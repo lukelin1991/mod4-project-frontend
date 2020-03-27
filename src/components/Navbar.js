@@ -61,6 +61,14 @@ class Navbar extends React.Component{
       </NavLink>
     </Menu.Item>
 
+    <Menu.Item link >
+      <NavLink
+        to="/items"
+        exact>
+        Items
+      </NavLink>
+    </Menu.Item>
+
     <Menu.Item link onClick={this.logout} position="right">
       Logout
     </Menu.Item>

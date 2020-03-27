@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
-import Login from './Login';
+import Login from './Login'
 import Home from './Home'
-import Sign from './Sign';
+import Sign from './Sign'
+import Item from './Item'
 import Navbar from './components/Navbar'
 
 
@@ -14,6 +15,7 @@ ReactDOM.render(
     <Route exact path="/" component={Home} />
     <Route path="/login" component={Login}/>
     <Route path="/signup" component={Sign}/>
+    <Route path="/items" component={Item}/>
 
   </Router>,
 

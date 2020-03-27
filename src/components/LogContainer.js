@@ -81,15 +81,7 @@ class LogContainer extends Component{
             })
 
             
-            let response = await fetch('http://localhost:3000/items',{
-                method: 'GET',
-                headers: {
-                Authorization: `Bearer ${this.props.token}`
-                }
-              })
-           
-            let heros = await response.json()
-            console.log(heros)
+            
             
               
             }catch(error){
