@@ -6,7 +6,7 @@ import Login from './Login'
 import Home from './Home'
 import Sign from './Sign'
 import Shop from './Shop'
-
+import Hero from './Hero'
 import Navbar from './components/Navbar'
 
 
@@ -17,6 +17,7 @@ ReactDOM.render(
     <Route path="/login" component={Login}/>
     <Route path="/signup" component={Sign}/>
     <Route path="/shops" component={Shop}/>
+    <Route path='/hero' component={Hero}/>
 
   </Router>,
 

@@ -18,7 +18,7 @@ class Home extends React.Component{
         return(
             <div>
                 {
-                    this.state.token === null?
+                    this.state.token === null || this.state.token ==="undefined"?
                <HomeContainer/>
                :
                <App/>}
@@ -27,7 +27,8 @@ class Home extends React.Component{
                     <NavLink to="/shops"exact>Shop</NavLink>
                 </Menu.Item>
                 <Menu.Item link >
-                    Heroes
+                    <NavLink to="/hero" exact>Heroes</NavLink>
+                    
                 </Menu.Item>
             </Menu>
                
