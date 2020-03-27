@@ -21,7 +21,7 @@ class Navbar extends React.Component{
 
   conditionalNav=()=>{
     
-    return this.state.token === null?
+    return this.state.token === null || this.state.token ==="undefined"?
 
     <Menu>
       
@@ -61,13 +61,13 @@ class Navbar extends React.Component{
       </NavLink>
     </Menu.Item>
 
-    <Menu.Item link >
+    {/* <Menu.Item link >
       <NavLink
         to="/items"
         exact>
         Items
       </NavLink>
-    </Menu.Item>
+    </Menu.Item> */}
 
     <Menu.Item link onClick={this.logout} position="right">
       Logout

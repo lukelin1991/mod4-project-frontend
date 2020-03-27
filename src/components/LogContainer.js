@@ -67,18 +67,20 @@ class LogContainer extends Component{
             })
 
             //updates state to display message
-            Object.keys(user)[0] !== 'error'?
-            this.setState({
-                success:true,
-                error:false,
-                warning:false
-            })
-            :
+            Object.keys(user)[0] === 'error' || Object.values(user)[0].includes('Invalid')? 
             this.setState({
                 error:true,
                 warning:false,
                 success:false
             })
+            :
+            this.setState({
+                success:true,
+                error:false,
+                warning:false
+            })
+            
+          
 
             
             

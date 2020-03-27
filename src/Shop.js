@@ -1,4 +1,5 @@
 import React from 'react'
+import ItemContainer from './components/ShopContainer'
 
 class Item extends React.Component{
     state={
@@ -6,7 +7,7 @@ class Item extends React.Component{
         items:[]
     }
     async componentDidMount(){
-        let response = await fetch('http://localhost:3000/items',{
+        let response = await fetch('http://localhost:3000/shops',{
                 method: 'GET',
                 headers: {
                 Authorization: `Bearer ${this.state.token}`
@@ -14,15 +15,19 @@ class Item extends React.Component{
               })
            
             let items = await response.json()
-            console.log(items)
+            console.log(items[0].merchandise)
             this.setState({
-                items:items
+                items:items[0].merchandise
             })
     }
+
+
     render(){
         return(
             <div>
-
+                <div className="item-container">
+                <ItemContainer items={this.state.items}/>
+                </div>
             </div>
         )
     }

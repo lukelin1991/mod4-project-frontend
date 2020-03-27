@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { connect }
+import React, { Component,useEffect, useState } from 'react';
+// import { connect }
 
 import DrawWorld from './components/DrawWorld';
 import './App.css';

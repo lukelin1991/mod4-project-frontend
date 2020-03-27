@@ -5,7 +5,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Login from './Login'
 import Home from './Home'
 import Sign from './Sign'
-import Item from './Item'
+import Shop from './Shop'
+
 import Navbar from './components/Navbar'
 
 
@@ -15,7 +16,7 @@ ReactDOM.render(
     <Route exact path="/" component={Home} />
     <Route path="/login" component={Login}/>
     <Route path="/signup" component={Sign}/>
-    <Route path="/items" component={Item}/>
+    <Route path="/shops" component={Shop}/>
 
   </Router>,
 

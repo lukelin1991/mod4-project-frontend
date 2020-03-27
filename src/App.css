@@ -17,16 +17,17 @@
   transition: left .5s ease-in-out 0s, top .5s ease-in-out 0s;
 }
 
-@keyframes movePlayer {
+/* @keyframes movePlayer {
   100% {
     background-position-x: 320px;
   }
-}
+} */
 
-@media (prefers-reduced-motion: no-preference) {
+/* @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
-  }
+  } */
+  
 .logcontainer{
   position: relative;
   width: 300px;
